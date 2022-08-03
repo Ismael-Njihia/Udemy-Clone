@@ -1,7 +1,15 @@
- import React from 'react';
+ import React, {useState} from 'react';
+ import {db} from "../firebaseconfig";
+ import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+ 
  import { Button, Form } from 'react-bootstrap';
+ import { ToastContainer, toast } from 'react-toastify';
+ import 'react-toastify/dist/ReactToastify.css';
 
  function Register(){
+  
+
+
 
     return(
         <div className='LoginaAndSignup'>
@@ -28,10 +36,16 @@
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicConfirm">
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control type="password" placeholder="Confirm Password"/>
+        </Form.Group>
        
         <Button className="btn btn-primary" type="submit">
-          Submit
+          Register
         </Button>
+        <ToastContainer/>
       </Form>
     </div>
 
